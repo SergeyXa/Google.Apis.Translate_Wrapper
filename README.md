@@ -49,13 +49,6 @@ Notice that if you are going to use the library via COM, you have to run the Vis
 Studio as an administrator. Otherwise the VS won't register the library after it's
 compiled.
 
-## Running And The Sample
-
-You can use the library both as .NET assembly and as COM library.
-
-The sample included employs the COM interface to implement the translation in Microsoft
-Word.
-
 ### Is it free to use the Google Cloud Translation?
 
 At the moment of this writing, Google allows to use the API for free to translate up to
