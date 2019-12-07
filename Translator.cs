@@ -20,23 +20,32 @@ namespace GoogleApisTranslateWrapper
 
         public Translator()
         {
-            var credential = GoogleCredential.FromFile(Path.Combine(
-                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), 
-                    @"key.json"));
+            var keyJsonFilepath = Path.Combine(
+                    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+                    @"key.json");
 
-            if (!(credential.UnderlyingCredential is ServiceAccountCredential))
-                throw new Exception("key.json should define a ServiceAccountCredential");
-
-            _projectId = ((ServiceAccountCredential)credential.UnderlyingCredential).ProjectId;
-
-            if(credential.IsCreateScopedRequired)
-                credential = credential.CreateScoped(TranslateService.Scope.CloudTranslation);
-
-            _translateService = new TranslateService(new BaseClientService.Initializer
+            try
             {
-                ApplicationName = nameof(GoogleApisTranslateWrapper),
-                HttpClientInitializer = credential
-            });
+                var credential = GoogleCredential.FromFile(keyJsonFilepath);
+
+                if (!(credential.UnderlyingCredential is ServiceAccountCredential))
+                    throw new Exception("key.json should define a ServiceAccountCredential");
+
+                _projectId = ((ServiceAccountCredential)credential.UnderlyingCredential).ProjectId;
+
+                if (credential.IsCreateScopedRequired)
+                    credential = credential.CreateScoped(TranslateService.Scope.CloudTranslation);
+
+                _translateService = new TranslateService(new BaseClientService.Initializer
+                {
+                    ApplicationName = nameof(GoogleApisTranslateWrapper),
+                    HttpClientInitializer = credential
+                });
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public string Translate(string text, string sourceLang, string targetLang)
