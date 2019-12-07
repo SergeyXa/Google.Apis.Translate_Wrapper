@@ -1,4 +1,4 @@
-﻿# GoogleApisTranslateWrapper
+﻿# Google.Apis.Translate Wrapper
 
 ## What's this?
 This is a tiny .NET library, which employs [Google Cloud
