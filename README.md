@@ -3,19 +3,17 @@
 ## What's this?
 This is a tiny .NET library, which employs [Google Cloud
 Translation](https://cloud.google.com/translate/docs/) for translating a text from one
-language to another.
+language to another. 
 
 The project depends on the [Google.Apis](https://www.nuget.org/packages/Google.Apis),
 mainly on the
 [Google.Apis.Translate.v3beta1](https://www.nuget.org/packages/Google.Apis.Translate.v3beta1),
 and, in fact, is just a minimalistic wrapper around these, making it simple to use the
-APIs for a text translation.
+APIs for a text translation from .NET or any environment supporting COM.
 
-The translator class is usable as a COM object. Which makes it easy to use the translator
-in VBA (e.g. in Word, or Excel). The project was initially developed to translate some
-Word documents.
-
-The project includes the macro demonstrating usage of the translator in Microsoft Word.
+The translator in VBA (e.g. in Word, or Excel). The project was initially developed
+to translate some Word documents. The source of the macro demonstrating usage of the 
+translator in Microsoft Word is included.
 
 ## Building And Installation
 
