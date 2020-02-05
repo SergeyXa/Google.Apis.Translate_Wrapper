@@ -11,9 +11,9 @@ mainly on the
 and, in fact, is just a minimalistic wrapper around these, making it simple to use the
 APIs for a text translation from .NET or any environment supporting COM.
 
-The translator in VBA (e.g. in Word, or Excel). The project was initially developed
-to translate some Word documents. The source of the macro demonstrating usage of the 
-translator in Microsoft Word is included.
+The translator can be used from VBA (e.g. in Word, or Excel). The project was initially 
+developed to translate some Word documents. The source of the macro demonstrating usage 
+of the translator in Microsoft Word is included.
 
 ## Building And Installation
 
